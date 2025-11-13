@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-chaining</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/master.css">
+    <style>
+        button.btn {
+            display: flex;
+            cursor: pointer;
+            background-color: #fff9;
+            border: none;
+            margin: 1rem auto;
+            border-radius: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            transition: transfrom 0.2s ease-in;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        article.area {
+            background: url(images/oceanos2.jpg) no-repeat center;
+            border-radius: 0.4rem;
+            border: 2px solid;
+            overflow: hidden;
+            height: 300px;
+            margin: 2rem auto;
+            position: relative;
+            width: 300px;
+
+
+
+            img.pinguino {
+                position: absolute;
+                top: 130px;
+                left: 90px;
+                transition: all 0.2s ease-in;
+                height: 100px;
+                transform: rotateY(-180deg);
+
+            }
+
+            img.p {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                transition: all 0.2s ease-in;
+                height: 70px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body class="jquery">
+    <nav class="nav">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path
+                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+        </a>
+    </nav>
+    <main>
+        <header class="header">
+            <h1>08-chaining</h1>
+            <h2>Chain multiple jQuery methods for concise code.</h2>
+        </header>
+        <section class="section">
+            <button class="btn">Animate</button>
+            <article class="area">
+                <img class="pinguino" src="images/2529b51aa238deaadd3c8ab8fc587feb_w200.gif">
+                <img class="p" src="images/p.gif">
+            </article>
+        </section>
+    </main>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btn').click(function () {
+                $('.p').animate({ 'left': '180px' })
+                    .animate({ 'top': '200px' })
+                    .animate({ 'left': '10px','transfrom' : 'rotateY(-180)' })
+                    .animate({ 'top': '10px' })
+            })
+        })
+    </script>
+</body>
+
+</html>

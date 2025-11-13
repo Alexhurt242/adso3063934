@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-structure</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        section {
+            .main{
+                border: 1px solid #fff9;
+
+            }
+
+        .header{
+            justify-content: center;
+            width: 100% auto;
+            border: 1px solid #fff9;
+            height: 50px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgba(240, 248, 255, 0.158);
+            
+        }
+     
+        .nav{
+            justify-content: center;
+            width: 100%;
+            border: 1px solid #fff9;
+            padding: 0.4rem;
+            height: 50px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgba(240, 248, 255, 0.158);
+        }
+        .section{
+                justify-content: center;
+            width: 60%;
+            border: 1px solid #fff9;
+            padding: 0.4rem;
+            height: 160px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgba(179, 179, 179, 0.096);
+        }
+        .article{
+            justify-content: center;
+            width: 60%;
+            border: 1px solid #fff9;
+            padding: 0.4rem;
+            height: 160px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgba(179, 179, 179, 0.096);
+        }
+        .aside{
+            justify-content: center;
+            display: inline-flex;
+            float: right;
+            width: 40%;
+            border: 1px solid #fff9;
+            padding: 0.4rem;
+            height: 320px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgba(179, 179, 179, 0.096);
+        }
+        .footer{
+            justify-content: center;
+            width: 100%;
+            border: 1px solid #fff9;
+            padding: 0.4rem;
+            height: 50px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgba(240, 248, 255, 0.158);
+        }
+    }
+
+    
+    </style>
+<body class="html">
+    <nav class="nav">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="header">
+            <h1>15-structure</h1>
+            <h2>Define la estructura con etiquetas no semánticas (estilo antiguo)</h2>
+        </header>
+        <section class="section">
+            <div class="main">
+                <div class="header">Header</div>
+                <div class="nav">Nav</div>
+                <div class="content">
+                    <div class="aside">Aside</div>
+                    <div class="section">Section</div>
+                    <div class="article">Article</div>
+                    
+                </div>
+                <div class="footer">Footer</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
