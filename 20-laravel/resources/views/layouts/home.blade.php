@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="min-h-[100dvh] bg-[url(images/fondo_verde.png)] bg-cover w-full flex flex-col gap-4 items-center justify-center p-8">
+<body class="min-h-[100dvh] bg-[url({{ asset('images/larapets4.webp') }})] bg-cover w-full flex flex-col gap-4 items-center justify-center p-8">
     @yield('content')
 </body>
 </html>

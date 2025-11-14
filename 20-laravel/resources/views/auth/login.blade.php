@@ -1,4 +1,3 @@
-
 @extends('layouts.home')
 @section('title', 'Login: Larapets 🐶')
 @section('content')
@@ -11,22 +10,20 @@
             </svg>
             Login
         </h1>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div class="card w-full max-w-sm">
+        
+        <div class="card w-full max-w-sm">
                 <form method="POST" action="{{ route('login') }}" class="card-body">
                     @csrf
-                    <label class="label ">Email</label>
-                    <input type="text" name="email" class="input bg-[#0006] outline-0" required placeholder="Email" value="{{ old('email') }}" />
+                    <label class="label">Email</label>
+                    <input type="text" name="email" class="input bg-[#0006] w-full outline-0" required placeholder="Email" value="{{ old('email') }}" />
                     @error('email')
-                        <small class="badge badge-error w-full mt-1 py-3">{{ $message }}</small>
+                        <small class="badge badge-error w-full mt-1 py-5">{{ $message }}</small>
                     @enderror
 
                     <label class="label">Password</label>
-                    <input type="password"  class="input bg-[#0006] outline-0" name="password" placeholder="Password" />
+                    <input type="password" class="input bg-[#0006] w-full outline-0" name="password" placeholder="Password" />
                     @error('password')
-                        <small class="badge badge-error w-full mt-1 py-3">{{ $message }}</small>
+                        <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                     @enderror
 
                     <button class="btn btn-outline hover:bg-[#fff6] hover:text-white mt-4">Login</button>
@@ -42,8 +39,6 @@
                     </p>
                 </form>
             </div>
-
-        </form>
     </section>
 
 @endsection

@@ -75,14 +75,14 @@
                             <label class="label">Document</label>
                             <input type="text" class="input bg-[#0006] w-full mt-1 outline-0" name="document" placeholder="753921345" value="{{ old('document') }}"/>
                             @error('document')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
                             
                             {{-- FullName --}}
                             <label class="label">FullName</label>
                             <input type="text" class="input bg-[#0006] w-full mt-1 outline-0" name="fullname" placeholder="John Doe" value="{{ old('fullname') }}"/>
                             @error('fullname')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
                             
                             {{-- Gender --}}
@@ -93,14 +93,14 @@
                                 <option value="female" @if(old('gender') == 'female') selected @endif>Female</option>
                             </select>
                             @error('gender')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Birthdate --}}
                             <label class="label">Birthdate</label>
                             <input type="date" class="input bg-[#0006] w-full mt-1 outline-0" name="birthdate" placeholder="1999-10-29" value="{{ old('birthdate') }}"/>
                             @error('birthdate')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
                         </div>
 
@@ -109,21 +109,21 @@
                             <label class="label">Phone</label>
                             <input type="text" class="input bg-[#0006] w-full mt-1 outline-0" name="phone" placeholder="123-456-7890" value="{{ old('phone') }}"/>
                             @error('phone')
-                            <small class="badge badge-outline badge-error w-full mt-1 text-xs py-4">{{ $message }}</small>
+                            <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Email --}}
                             <label class="label">Email</label>
                             <input type="text" name="email" class="input bg-[#0006] w-full outline-0" required placeholder="Email" value="{{ old('email') }}" />
                             @error('email')
-                                <small class="badge badge-error w-full mt-1 py-3">{{ $message }}</small>
+                                <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Password --}}
                             <label class="label">Password</label>
                             <input type="password" class="input bg-[#0006] w-full outline-0" name="password" placeholder="Password" />
                             @error('password')
-                                <small class="badge badge-error w-full mt-1 py-3">{{ $message }}</small>
+                                <small class="badge badge-error w-full mt-1 py-4">{{ $message }}</small>
                             @enderror
 
                             {{-- Confirm Password --}}
