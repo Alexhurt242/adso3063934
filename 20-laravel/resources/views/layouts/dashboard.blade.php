@@ -10,12 +10,12 @@
 </head>
 @php
  if(Auth::user()->role == 'Administrator'){
-    $image = 'dashboard_admin.webp';
+    $image = 'images/dashboard_admin2.webp';
  } else {
-    $image = 'dashboard.webp';
+    $image = 'images/dashboard.webp';
  }
 @endphp
-<body class="min-h-[100dvh] bg-[url({{ asset('images/' . $image) }})] bg-cover w-full bg-fixed flex flex-col gap-4 items-center justify-center p-8  pt-20">
+<body class="min-h-[100dvh] bg-[url({{ asset($image) }})] bg-cover w-full bg-fixed flex flex-col gap-4 items-center justify-center p-8  pt-20">
     @include('layouts.navbar')
     @yield('content')
     @yield('js')

@@ -10,9 +10,18 @@ class UserController extends Controller
     public function index()
     {
         // Obtener todos los usuarios de la base de datos
-        $users = User::all();
+        $users = User::orderBy('id', 'desc')->paginate(20);
+        // dd($users->toArray());
+        return view('users.index')->with('users', $users);
 
         // Enviar los usuarios a la vista 'users.index'
         return view('users.index', compact('users'));
     }
+
+    public function create()
+    {
+        return view('users.create');
+    }
 }
+
+
