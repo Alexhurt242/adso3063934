@@ -18,6 +18,7 @@
 <body class="min-h-[100dvh] bg-[url({{ asset($image) }})] bg-cover w-full bg-fixed flex flex-col gap-4 items-center justify-center p-8  pt-20">
     @include('layouts.navbar')
     @yield('content')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" referrerpolicy="no-referrer"></script>
     @yield('js')
 </body>
 </html>

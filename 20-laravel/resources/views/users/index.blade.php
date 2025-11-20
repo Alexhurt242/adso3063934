@@ -60,6 +60,7 @@
         </label>
     </form>
 
+
     <div class="overflow-x-auto rounded-box border text-white bg-[#0009]">
         <table class="table">
             <!-- head -->
@@ -136,5 +137,29 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog id="modal_message" class="modal">
+        <div class="modal-box">
+            <h3 class="text-lg font-bold">congrarulations!</h3>
+            <div role="alert" class="alert alert-success alert-outline">
+                <span>{{ session('message') }}</span>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+
+    @section('js')
+    <script>
+        $(document).ready(function () {
+            @if (session('message'))
+                modal_message.showModal()
+            @endif
+        })
+    </script>
+    
+    @endsection
 
 @endsection
