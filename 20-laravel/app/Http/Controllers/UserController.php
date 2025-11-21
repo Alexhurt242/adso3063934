@@ -23,9 +23,10 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function edit()
+    public function edit(User $user)
     {
 
+        return view('users.edit')->with('user', $user);
     }
 
     public function show(User $user)
@@ -66,5 +67,58 @@ class UserController extends Controller
         $user->save();
 
         return redirect('users')->with('message', 'The user: ' . $user->fullname . ' was successfully added!');
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $validation = $request->validate([
+            'document' => ['required', 'numeric', 'unique:' . User::class . ',document,' . $user->id],
+            'fullname' => ['required', 'string'],
+            'gender' => ['required'],
+            'birthdate' => ['required', 'date'],
+            'phone' => ['required'],
+            'email' => ['required', 'lowercase', 'email', 'unique:' . User::class . ',email,' . $user->id],
+        ]);
+        if ($request->hasFile('photo')) {
+            // dd($request->all());
+            if ($request->hasFile('photo')) {
+                $photo = time() . '.' . $request->photo->extension();
+                $request->photo->move(public_path('images'), $photo);
+                if ($request->originphoto != 'no-photo.png') {
+                    unlink(public_path('images/') . $request->originphoto);
+                }
+            }
+            else{
+                $photo = $request->originphoto;
+            }
+        }
+
+        $user->document = $request->document;
+        $user->fullname = $request->fullname;
+        $user->gender = $request->gender;
+        $user->birthdate = $request->birthdate;
+        $user->photo = $photo;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+
+
+        if ($user->save()) {
+            return redirect('users')->with('message', 'The user:  ' . $user->fullname . '  was successfully edited!');
+        }
+    }
+
+    // Remove the specified rosource from storage.
+
+    public function destroy(User $user)
+    {
+        if(
+            $user->photo != 'no-photo.png') {
+                unlink(public_path('images/' . $user->photo));
+            }
+        
+        if($user->delete()) {
+            return redirect('users')->with('message',
+            'The user:  ' . $user->fullname . '  was successfully deleted!');
+        }
     }
 }
