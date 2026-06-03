@@ -1,0 +1,364 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia, serif;
+}
+
+body{
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* =========================
+   PANTALLA PRINCIPAL
+========================= */
+
+.container{
+    width:400px;
+    min-height:850px;
+    background:#090816;
+    border:2px solid #2f2f3a;
+    border-radius:40px;
+    padding:30px 20px;
+    overflow:hidden;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#ff1d1d;
+    font-size:50px;
+    font-style:italic;
+    text-shadow:
+        0 0 10px red,
+        0 0 20px red;
+}
+
+.buttons{
+    display:flex;
+    gap:8px;
+}
+
+.signin,
+.signup{
+    border:none;
+    padding:10px 14px;
+    font-size:12px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.signin{
+    background:#111;
+    color:white;
+    border:1px solid #fff;
+}
+
+.signup{
+    background:red;
+    color:white;
+}
+
+.albums{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.albums::-webkit-scrollbar{
+    display:none;
+}
+
+.albums img{
+    width:78px;
+    height:78px;
+    object-fit:cover;
+    border-radius:16px;
+    border:2px solid #555;
+    flex-shrink:0;
+}
+
+hr{
+    margin:20px auto;
+    width:80%;
+    border:1px solid #9b9b9b;
+}
+
+.artist{
+    display:flex;
+    align-items:center;
+    margin-bottom:28px;
+}
+
+.avatar{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+}
+
+.info{
+    margin-left:15px;
+    flex:1;
+}
+
+.info h3{
+    color:white;
+    font-size:20px;
+    margin-bottom:3px;
+}
+
+.info p{
+    color:#d8d8d8;
+    font-size:14px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:170px;
+}
+
+.artist.expanded .info p{
+    white-space:normal;
+    overflow:visible;
+    text-overflow:unset;
+    width:auto;
+    line-height:1.5;
+}
+
+.artist.expanded{
+    align-items:flex-start;
+}
+
+.arrow{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:2px solid white;
+    background:#5a5a5a;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.artist:nth-child(1) .avatar{
+    border-color:red;
+}
+
+.artist:nth-child(2) .avatar{
+    border-color:blue;
+}
+
+.artist:nth-child(3) .avatar{
+    border-color:white;
+}
+
+.artist:nth-child(4) .avatar{
+    border-color:#00ff55;
+}
+
+.artist:nth-child(5) .avatar{
+    border-color:#c200ff;
+}
+
+.artist:nth-child(6) .avatar{
+    border-color:yellow;
+}
+
+/* =========================
+   LOGIN SCREEN
+========================= */
+
+.login-screen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.login-container{
+    width:402px;
+    height:874px;
+
+    background:
+
+        url("img/fondo.svg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    border:2px solid #2f2f3a;
+    border-radius:40px;
+
+    overflow:hidden;
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* =========================
+   BOTON ATRAS
+========================= */
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:12px;
+
+    background:#f0f0f0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.back-btn:hover{
+    transform:scale(1.05);
+}
+
+.back-btn svg{
+    stroke:#000;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-container{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    margin-top:130px;
+}
+
+.login-logo{
+    width:200px;
+    height:auto;
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 10px red)
+        drop-shadow(0 0 20px red)
+        drop-shadow(0 0 30px red);
+}
+
+.logo-line{
+    width:280px;
+    height:2px;
+    background:white;
+    margin-top:15px;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.login-form{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    margin-top:120px;
+    gap:35px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.login-input{
+    width:300px;
+    height:55px;
+
+    border:none;
+    border-radius:15px;
+
+    background:#ececec;
+
+    padding:0 20px;
+
+    font-size:18px;
+    color:#555;
+}
+
+.login-input:focus{
+    outline:none;
+    background:white;
+}
+
+.login-input::placeholder{
+    color:#777;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.login-btn{
+    width:300px;
+    height:55px;
+
+    border:none;
+    border-radius:15px;
+
+    background:#ececec;
+
+    color:#666;
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    background:white;
+}
+
+.sign-in-btn{
+    margin-top:10px;
+}
+
+.sign-up-btn{
+    margin-top:-10px;
+}
+
+/* =========================
+   CONTROL DE PANTALLAS
+========================= */
+
+.main-screen{
+    display:block;
+}
